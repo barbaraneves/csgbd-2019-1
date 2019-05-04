@@ -1,0 +1,11 @@
+3. 
+Foi uma operação de leitura de toda tabela. Ele usuaria essa operação porque o banco é pequeno, portanto não é necessário uma busca por índice.  
+(Pesquisar o que seria operação de leitura e operação de leitura por meio de índice. Olhar a imagem.)
+
+4. 
+Pesquisar o significado do comando da questão e dizer o que mudou na pesquisa em relação a questão anterior.
+
+6. 
+
+14. Fazer o índice para BTREE utilizando outra "chave" (não utilizar o dnro).
+'				''
