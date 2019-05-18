@@ -4,15 +4,19 @@ Repositório que contém as atividades da disciplina de CSGBD.
 
 ## Atividades Práticas
 
-### Atividade 1 
+### Atividade 1
 
 Revisão de SQL.
 
-### Atividade 2
+### Atividade 2 
+
+Consultas no banco de dados de um condomínio.
+
+### Atividade 3
 
 Prática sobre Indexação.
 
-### Atividade 3 
+### Atividade 4 
 
 Prática sobre Processamento de Consultas.
 
