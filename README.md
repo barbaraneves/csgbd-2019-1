@@ -20,6 +20,10 @@ Prática sobre Indexação.
 
 Prática sobre Processamento de Consultas.
 
+### Atividade 5
+
+Prática sobre Gerenciamento de Transações.
+
 ## Listas de Exercícios
 
 ### Lista 1
