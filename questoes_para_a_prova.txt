@@ -1,0 +1,44 @@
+1ª Sobre Execução Concorrente de Transações, assinale V (verdadeiro) ou F (falso) para as assertivas abaixo. Justifique os itens incorretos. 
+
+I. (  ) Para melhorar o desempenho, o SGBD intercala diferentes transações, de forma que todas as intercalações sejam permitidas. 
+II. (  ) A execução concorrente de transações aumenta o throughput do sistema.
+III. (  ) A execução intercalada de uma transação curta com uma longa normalmente permite que a transação curta termine rapidamente.
+IV. (  ) A execução das transações não pode ser serializável se elas obtêm o mesmo resultado quando executadas em série.
+V. (  )  Existem três tipos de anomalias que as transações intercaladas podem causar: conflito de gravação-leitura (WR), leitura-gravação (RW) e leitura-leitura (RR).
+
+A sequência correta de preenchimento dos parênteses, de cima para baixo, é:
+
+a) F, V, V, F, V.
+b) F, V, F, V, F.
+c) V, F, V, F, F. 
+d) F, V, V, F, F.
+e) V, V, V, V, F. 
+
+	--> Resposta: 
+	Alternativa d).
+
+	--> Justificativas:
+	I. Para melhorar o desempenho, o SGBD intercala diferentes transações, de forma que NEM TODAS elas sejam permitidas.  
+	IV. A execução das transações É serializável se elas obtêm o mesmo resultado quando executadas em série.
+	V. Existem três tipos de anomalias que as transações intercaladas podem causar: conflito de gravação-leitura (WR), leitura-gravação (RW) e GRAVAÇÃO-GRAVAÇÃO (WW).
+
+2ª O que é um cancelamento de transação em cascata e como ele pode ser evitado?
+
+	--> Resposta: 
+	Um cancelamento de transação acontece quando transações lêem valores alterados por uma transação ainda não efetivada. 
+	Caso haja um cancelamento desta transação, todas as que utilizaram seus valores alterados e não tenham sido efetivadas, também são canceladas. 
+	Evita-se o cancelamento de transação em cascata quando transações lêem apenas valores de transações que já foram efetivadas.
+
+3ª Após uma falha, quando o sistema é reiniciado, o gerenciador de recuperação prossegue em três fases. Quais são essas fases? E quais suas funções no algoritmo ARIES?
+
+	--> Resposta:
+	A fase de Análise inicia com o registro início_ponto-de-verificação mais recente e avança no LOG até o último registro. 
+
+	Isso determina:
+	(a) o ponto no log no qual iniciar a fase Refazer;
+	(b) as páginas sujas no buffer pool no momento da falha; e,
+	(c) as transações que estavam ativas no momento da falha que precisam serem desfeitas.
+
+	Assim, a fase Refazer vem após da fase Análise e refaz todas as alterações em qualquer página que possa estar suja no momento do acidente.
+	E a fase de Desfazer segue a fase Refazer e desfaz as alterações de todas as transações que estavam ativas no momento da falha.
+
