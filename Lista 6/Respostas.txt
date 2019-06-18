@@ -1,0 +1,30 @@
+Respostas da Lista de Revisão sobre Controle de Concorrência e Recuperação de Falhas
+
+1. Dois escalonamentos são equivalentes por conflito se eles envolvem ações da mesmas transações e ordenam cada par de ações conflitantes de duas transações efetivadas da mesma maneira.
+Duas ações estão em conflito se operam no mesmo objeto de dados e pelo menos uma delas é uma gravação. O resultado de um plano de execução depende apenas da ordem das operações conflitantes. Se dois planos de execução são equivalentes quanto ao conflito, é fácil ver que eles têm o mesmo efeito sobre um banco de dados. 
+Um plano de execução é serializável quanto ao conflito se ele for equivalente quanto ao conflito a algum plano de execução serial. 
+Um escalonamento E é recuperável, evita aborto em cascata e é estrito se uma Tx em E só puder ler ou atualizar um dado X depois que todas as transações que atualizaram X tenham sido concluídas.
+
+2. Um grafo de precedência contém todos os conflitos em potencial entre as transações de um escalonamento/plano de execução.
+Um plano de execução S é serializável quanto ao conflito sse seu grafo de precedência for acíclico.
+Ele está relacionado ao protocolo Strict 2PL pois esse protocolo garante que o grafo de precedência de qualquer plano de execução que ele permita seja acíclico.
+
+3. Um gerenciador de bloqueio é a parte do SGBD que monitora os bloqueios concedidos às transações. Ele também mantém uma tabela de bloqueios, que é uma tabela de hashing com o identificador de objeto de dados como chave. O SGBD também mantém uma entrada descritiva para cada transação em uma tabela de transações e essa entrada contém um ponteiro para uma lista de bloqueios mantidos pela transação. Essa lista é verificada antes da solicitação de um bloqueio, para garantir que uma transação não solicite o mesmo bloqueio 2 vezes. Uma entrada da tabela de bloqueios para um objeto contém: o número de transações que concorrentemente mantêm um bloqueio sobre o objeto, a natureza do bloqueio e um ponteiro para uma fila de pedidos de bloqueio.
+
+4.
+
+5.
+
+6. 
+
+7. Feita em outro documento.
+
+8. O log às vezes é chamado de trilha ou periódico e é um histórico de ações executadas pelo SGBD. Todo registro de log recebe um id exclusivo, chamado de número de sequência de log (NSL). (Terminar)
+
+9. A tabela de transações contém uma entrada para cada transação ativa. A entrada contém o id da transação, o status e um campo chamado último NSL. 
+A tabela de páginas sujas contém uma entrada para cada página suja no pool de bufers, isto é, cada página com alterações ainda não refletidas no disco. 
+
+10. O Write-Ahead Log (Wal) é a regra fundamental que garante que um registro de cada alteração no banco de dados esteja disponível enquanto se tenta recuperar de uma falha. (Terminar)
+
+
+
